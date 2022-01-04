@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+}
+
+a {
+  cursor: pointer;
+  &:active{
+    cursor: grabbing;
+  }
+  &:hover{
+    color: #0099e5;
+  }
+}
+
+.sidebar {
+  width: 320px;
+  min-width: 320px;
+  border-right: 1px solid #ccc;
+  padding: 25px;
+
+  .logo {
+    margin-bottom: 25px;
+
+    a {
+      font-size: 30px;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #999;
+    margin-bottom: 25px;
+  }
+
+  .menus {
+    ul {
+      li {
+        a {
+          display: block;
+          font-weight: 600;
+          color: #333
+        }
+      }
+    }
+  }
+}
+
+.about-modal {
+  width: 720px;
+  background: #fff;
+  box-shadow: 0 0 15px 0 rgba(#000, .1);
+  padding: 50px;
+  position: relative;
+}
+
+.about-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(#fff,0.8);
+}
