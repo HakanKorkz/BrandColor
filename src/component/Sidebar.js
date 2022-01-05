@@ -1,12 +1,12 @@
 import {useState} from "react";
-import Modal from 'react-modal';
-
+import {GrClose} from "react-icons/gr";
+import Modal from "react-modal";
 function Sidebar() {
+
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const toggleModal = () => {
         setModalIsOpen(!modalIsOpen);
     }
-
     return (
         <>
             <aside className='sidebar'>
@@ -28,7 +28,9 @@ function Sidebar() {
                    onRequestClose={toggleModal}
                    className="about-modal"
                    overlayClassName="about-modal-overlay">
-                <button onClick={toggleModal}>Kapt</button>
+                <button onClick={toggleModal} className='about-btn-close'>
+                    <GrClose/>
+                </button>
 
                 <h3>
                     About BrandColors
