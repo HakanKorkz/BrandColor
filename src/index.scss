@@ -84,6 +84,23 @@ html, body {
       margin-bottom: 1%;
       border-radius: 1%;
       overflow: hidden;
+      &.selected{
+        border-color: #ff0000;
+        span {
+          transition: 2s;
+          flex: 1;
+          text-indent: 0;
+          text-align: center;
+          line-height: 2.4;
+          font-weight: bold;
+          &:before {
+            transition: 2s;
+          }
+          &:after {
+            transition: 2s;
+          }
+        }
+      }
 
       h5 {
         justify-content: center;
@@ -91,6 +108,10 @@ html, body {
         text-align: center;
         font-size: 26px;
         line-height: 2;
+        cursor: pointer;
+        &:active {
+          cursor: grabbing;
+        }
       }
 
       &-colors {
@@ -98,11 +119,12 @@ html, body {
         span {
           background: var(--bgColor);
           color: var(--Color);
-          flex: 1;
-          display: flex;
+          width: 40px;
           justify-content: center;
           align-items: center;
           height: 40px;
+          text-indent: -9999px;
+
         }
       }
 

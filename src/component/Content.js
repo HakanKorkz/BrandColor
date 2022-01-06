@@ -1,19 +1,10 @@
 import Search from "./Search";
 import Color from './Color'
-import ColorsData from '../data/ColorsData.json'
-import {useState} from "react";
+import {useContext} from "react";
+import MainContext from "../MainContext";
 function Content() {
 
-
-    const colorArray = [];
-
-    // eslint-disable-next-line array-callback-return
-    Object.keys(ColorsData).map(keys => {
-
-        colorArray.push(ColorsData[keys])
-    })
-
-    const [colors, setColors] = useState(colorArray)
+    const {colors} = useContext(MainContext)
 
     return (
         <main className='content'>
