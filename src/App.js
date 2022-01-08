@@ -17,10 +17,11 @@ function App() {
     const [colors, setColors] = useState(colorArray)
     const [selectedColors, setSelectedColors] = useState([])
     const [copied, setCopied] = useState(false)
+    const [search, setSearch] = useState('')
     useEffect(() => {
 
             if (copied) {
-             const  setTimeOut=setTimeout(() => {
+                const setTimeOut = setTimeout(() => {
                     setCopied(false)
                 }, 500)
 
@@ -29,12 +30,17 @@ function App() {
             }
         }, [copied]
     )
+    useEffect(() => {
+        setColors(colorArray.filter(color => color.title.toLowerCase().includes(search)))
+    }, [search])
     const data = {
         colors,
         setColors,
         selectedColors,
         setSelectedColors,
-        setCopied
+        setCopied,
+        search,
+        setSearch
     }
     return (
         <>
