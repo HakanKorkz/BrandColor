@@ -3,6 +3,7 @@ import Content from "./component/Content";
 import MainContext from "./MainContext";
 import ColorsData from "./data/ColorsData.json";
 import {useEffect, useState} from "react";
+import Copied from "./component/Copied";
 
 function App() {
     const colorArray = [];
@@ -15,18 +16,30 @@ function App() {
 
     const [colors, setColors] = useState(colorArray)
     const [selectedColors, setSelectedColors] = useState([])
-    useEffect(()=>{
-console.log(selectedColors)
-    },[selectedColors])
+    const [copied, setCopied] = useState(false)
+    useEffect(() => {
+
+            if (copied) {
+             const  setTimeOut=setTimeout(() => {
+                    setCopied(false)
+                }, 500)
+
+                clearTimeout(setTimeOut)
+
+            }
+        }, [copied]
+    )
     const data = {
         colors,
         setColors,
         selectedColors,
-        setSelectedColors
+        setSelectedColors,
+        setCopied
     }
     return (
         <>
             <MainContext.Provider value={data}>
+                {copied && <Copied color={copied}/>}
                 <Sidebar/>
                 <Content/>
             </MainContext.Provider>

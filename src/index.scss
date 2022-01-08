@@ -77,6 +77,7 @@ html, body {
 
   .brands {
     padding: 25px;
+
     .brand {
       border: 1px solid black;
       padding: 20px;
@@ -84,8 +85,10 @@ html, body {
       margin-bottom: 1%;
       border-radius: 1%;
       overflow: hidden;
-      &.selected{
+
+      &.selected {
         border-color: #ff0000;
+
         span {
           transition: 2s;
           flex: 1;
@@ -93,11 +96,14 @@ html, body {
           text-align: center;
           line-height: 2.4;
           font-weight: bold;
+          cursor: pointer;
+
           &:before {
             transition: 2s;
           }
-          &:after {
-            transition: 2s;
+
+          &:active {
+            cursor: grabbing;
           }
         }
       }
@@ -109,6 +115,7 @@ html, body {
         font-size: 26px;
         line-height: 2;
         cursor: pointer;
+
         &:active {
           cursor: grabbing;
         }
@@ -116,7 +123,9 @@ html, body {
 
       &-colors {
         display: flex;
+
         span {
+          transition: 2s;
           background: var(--bgColor);
           color: var(--Color);
           width: 40px;
@@ -124,7 +133,6 @@ html, body {
           align-items: center;
           height: 40px;
           text-indent: -9999px;
-
         }
       }
 
@@ -176,6 +184,17 @@ a {
       }
     }
   }
+}
+
+.copied {
+  position: fixed;
+  background: var(--bgColor);
+  color: var(--Color);
+  padding: 20px;
+  bottom: 10px;
+  right: 20px;
+  border-radius: 0.5%;
+  font-weight: bold;
 }
 
 .about-modal {
