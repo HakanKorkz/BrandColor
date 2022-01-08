@@ -22,7 +22,7 @@ function Color({color}) {
             <h5 onClick={toggleSelected}> {color.title}</h5>
             <div className="brand-colors">
                 {color.colors.map(color => (
-                    <ClipboardButton component='span'
+                    <ClipboardButton key={color.slug} component='span'
                                      style={{'--bgColor': `#${color}`, '--Color': `${getContrast(color)}`}}
                                      data-clipboard-text={color} onSuccess={() => setColor(color)}>
                         {color}
