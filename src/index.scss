@@ -43,7 +43,10 @@ html, body {
     overflow: hidden;
     display: flex;
     position: sticky;
+    justify-content: space-between;
+    background: white;
     top: 0;
+    align-items: center;
 
     .search-content {
       flex: 1;
@@ -72,6 +75,132 @@ html, body {
         padding: 0 1.25rem 0 3.75rem;
       }
 
+    }
+
+    .leftBar {
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      background-color: white;
+
+      svg {
+        display: block;
+
+        path {
+          stroke: #999999;
+        }
+      }
+
+      .left-actions {
+        display: flex;
+        margin-right: 5px;
+
+        a, button {
+          background: transparent;
+          display: flex;
+          width: 30px;
+          height: 30px;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          svg {
+            height: 15px;
+            width: 15px;
+          }
+        }
+
+        :hover {
+          svg {
+            transition: 1s;
+            height: 20px;
+            width: 20px;
+
+            path {
+              stroke: #333333;
+            }
+          }
+        }
+
+        .select-box {
+          display: flex;
+          align-items: center;
+          position: relative;
+
+          svg {
+            fill: #999999;
+            width: 15px;
+            height: 15px;
+            margin-left: 4px;
+            cursor: pointer;
+
+            &:hover {
+              transition: 1s;
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          select {
+            position: relative;
+            font-size: 12px;
+            color: #999999;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 1s;
+            height: 30px;
+            padding: 0 10px;
+            background: whitesmoke;
+            border-radius: 4px;
+            margin-right: 6px;
+            appearance: none;
+            text-align: center;
+
+            &:hover,&:focus {
+              transition: 1S;
+              color: #b8b5b5;
+              font-size: 16px;
+            }
+
+            option {
+              position: absolute;
+              white-space: normal;
+              font-size: 14px;
+              color: #999999;
+              width: 600px;
+              height: 600px;
+              margin-top: 200px;
+
+              &:hover {
+                transition: 1s;
+                background: #999999;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+
+      .selected-colors {
+        font-size: 14px;
+        font-weight: 500;
+        color: #999999;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        button {
+          background: transparent;
+          flex: 1;
+          margin-right: 4px;
+          cursor: pointer;
+
+          svg {
+            height: 15px;
+            width: 15px;
+          }
+        }
+      }
     }
   }
 
