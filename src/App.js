@@ -4,6 +4,12 @@ import MainContext from "./MainContext";
 import ColorsData from "./data/ColorsData.json";
 import {useEffect, useState} from "react";
 import Copied from "./component/Copied";
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
+import Collection from "./component/Collection";
 
 function App() {
     const colorArray = [];
@@ -47,7 +53,12 @@ function App() {
             <MainContext.Provider value={data}>
                 {copied && <Copied color={copied}/>}
                 <Sidebar/>
-                <Content/>
+                <BrowserRouter>
+                    <Routes>
+                            <Route path="/" element={<Content/>} exact />
+                            <Route path="/collection/:slugs" element={<Collection/>} exact />
+                        </Routes>
+                </BrowserRouter>
             </MainContext.Provider>
 
         </>

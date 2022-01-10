@@ -1,13 +1,17 @@
 import Search from "./Search";
 import LeftBar from "./LeftBar";
+import {useParams} from "react-router-dom";
+import TurnBack from "./TurnBack";
 
 
 function HeaderBar() {
 
-    return (
+    const {slugs} = useParams()
 
+    return (
         <header className='header'>
-            <Search/>
+            {!slugs && <Search/>}
+            {slugs && <TurnBack /> }
             <LeftBar/>
         </header>
     )

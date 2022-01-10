@@ -77,6 +77,29 @@ html, body {
 
     }
 
+    .all-colors-content {
+      flex: 1;
+      position: relative;
+      padding: 20px;
+
+      button {
+        padding: 6px;
+        border-radius: 4px;
+        background: #cccccc;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          transition: 2s;
+          background: #999999;
+          color: white;
+          font-size: 16px;
+        }
+      }
+
+    }
+
     .leftBar {
       padding: 25px;
       display: flex;
@@ -156,7 +179,7 @@ html, body {
             appearance: none;
             text-align: center;
 
-            &:hover,&:focus {
+            &:hover, &:focus {
               transition: 1S;
               color: #b8b5b5;
               font-size: 16px;

@@ -1,12 +1,10 @@
 import {useContext, useEffect, useState} from "react";
 import MainContext from "../MainContext";
 import {GrLink, GrDownload, GrClose} from "react-icons/gr";
+import {Link} from "react-router-dom";
 function LeftBar() {
     const {setSelectedColors, colors, selectedColors} = useContext(MainContext)
     const [cssMethod, setCssMethod] = useState('css')
-    const getLink = () => {
-        prompt('Here\'s the URL to share', `http://localhost:3000/collection/${selectedColors.join(',')}`)
-    }
     const [downloadUrl, setDownloadUrl] = useState()
 
     useEffect(() => {
@@ -82,9 +80,10 @@ function LeftBar() {
                 <a download={`Colors.${cssMethod}`} href={downloadUrl}>
                     <GrDownload/>
                 </a>
-                <button disabled={selectedColors.length <= 0 && true} onClick={() => getLink()}>
+
+                <Link to={selectedColors.length > 0 && `/collection/${selectedColors.join(',')}`}>
                     <GrLink/>
-                </button>
+                </Link>
 
             </div>
             <div className='selected-colors' onClick={() => setSelectedColors([])}>
