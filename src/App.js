@@ -4,6 +4,7 @@ import MainContext from "./MainContext";
 import ColorsData from "./data/ColorsData.json";
 import {useEffect, useState} from "react";
 import Copied from "./component/Copied";
+import { forceCheck } from 'react-lazyload';
 import {
     BrowserRouter,
     Routes,
@@ -39,6 +40,11 @@ function App() {
     useEffect(() => {
         setColors(colorArray.filter(color => color.title.toLowerCase().includes(search)))
     }, [search])
+    useEffect(()=>{
+
+        forceCheck()
+
+    },[colors])
     const data = {
         colors,
         setColors,

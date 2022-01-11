@@ -23,7 +23,7 @@ function Collection() {
                 {selectedColors.map(slug => {
                     let color = colors.find(color => color.slug === slug)
                     return (
-                        <LazyLoad key={color.slug} once={true} overflow={true} placeholder='Yükleniyor'
+                        <LazyLoad key={slug} once={true} overflow={true} placeholder='Yükleniyor'
                                   className='LazyLoad'>
                             <Color color={color}/>
                         </LazyLoad>

@@ -3,6 +3,8 @@ import LazyLoad from 'react-lazyload';
 import {useContext} from "react";
 import MainContext from "../MainContext";
 import HeaderBar from "./HeaderBar";
+import Loader from "./Loader";
+
 function Content() {
 
     const {colors} = useContext(MainContext)
@@ -10,12 +12,13 @@ function Content() {
     return (
         <main className='content'>
 
-            <HeaderBar />
+            <HeaderBar/>
             <section className='brands'>
                 {
                     colors.map(color => (
-                        <LazyLoad key={color.slug} once={true} overflow={true} placeholder='Yükleniyor' className='LazyLoad'>
-                        <Color color={color}/>
+                        <LazyLoad key={color.slug} once={true} overflow={true} placeholder={<Loader/>}
+                                  className='LazyLoad'>
+                            <Color color={color}/>
                         </LazyLoad>
                     ))
                 }
